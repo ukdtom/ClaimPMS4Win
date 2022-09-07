@@ -59,9 +59,9 @@
             this.lblUsrName.AutoSize = true;
             this.lblUsrName.Location = new System.Drawing.Point(455, 12);
             this.lblUsrName.Name = "lblUsrName";
-            this.lblUsrName.Size = new System.Drawing.Size(63, 13);
+            this.lblUsrName.Size = new System.Drawing.Size(107, 13);
             this.lblUsrName.TabIndex = 3;
-            this.lblUsrName.Text = "User Name:";
+            this.lblUsrName.Text = "Email (or Username) :";
             // 
             // lblPwd
             // 
