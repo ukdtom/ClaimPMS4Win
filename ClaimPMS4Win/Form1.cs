@@ -44,7 +44,7 @@ namespace ClaimPMS4Win
                 PlexOnlineToken = (String)pmsKeys.GetValue("PlexOnlineToken");
                 PlexOnlineUsername = (String)pmsKeys.GetValue("PlexOnlineUsername");
                 //this.tbUsrName.Text = PlexOnlineUsername;
-                PlexOnlineHome = pmsKeys.GetValue("PlexOnlineHome").ToString();
+                PlexOnlineHome = pmsKeys.GetValue("PlexOnlineHome", 0).ToString();
                 return true;
             }
             else
