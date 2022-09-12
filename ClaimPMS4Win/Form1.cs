@@ -264,18 +264,18 @@ namespace ClaimPMS4Win
             client.DefaultRequestHeaders.Add("X-Plex-Product", name);
             this.setDefaultHeaders();
             this.Text = name + " v" + version;
-            this.addLog("Velcome to " + name);
+            this.addLog("Welcome to " + name);
             this.addLog("");
-            this.addLog("Note: When we say PMS, we mean the Plex Media Server");
+            this.addLog("Note: PMS = Plex Media Server");
             this.addLog("");
             this.addLog("This 3rd. Party tool will assist you in (Re-) Claiming a PMS");
             this.addLog("");
-            this.addLog("This tool MUST be run on the PMS itself, and as the user that normally runs the PMS");
+            this.addLog("This tool MUST be run on the PMS machine, and as the user that normally runs the PMS");
             this.addLog("");
             this.addLog("");
             if (pmsPresent())
             {
-                this.addLog("We found an installed PMS, so good so far");
+                this.addLog("We found an installed PMS, so far, so good");
                 this.addLog("");
                 this.addLog("PMS Name detected as: " + FriendlyName);
                 if (this.PlexOnlineToken != "")
