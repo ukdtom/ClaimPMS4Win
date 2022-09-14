@@ -11,3 +11,6 @@
 Download the ClaimPMS4Win.zip file to your Windows machine from [Latest Releases](https://github.com/ukdtom/ClaimPMS4Win/releases).
 
 Extract the files to a location on your PC and then locate and double click on ClaimPMS4Win.exe to run the program.
+
+
+See the [Wiki](https://github.com/ukdtom/ClaimPMS4Win/wiki) for more details.
