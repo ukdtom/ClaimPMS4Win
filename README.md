@@ -6,4 +6,11 @@
 ![Maintenance](https://img.shields.io/badge/Maintained-Yes-green.svg)
 
 # ClaimPMS4Win
-(Re-)Claim a Windows based Plex Media Server
+(Re-)Claim a Windows based Plex Media Server using this handy program.
+
+Download the ClaimPMS4Win.zip file to your Windows machine from [Latest Releases](https://github.com/ukdtom/ClaimPMS4Win/releases).
+
+Extract the files to a location on your PC and then locate and double click on ClaimPMS4Win.exe to run the program.
+
+
+See the [Wiki](https://github.com/ukdtom/ClaimPMS4Win/wiki) for more details.
