@@ -74,6 +74,7 @@ namespace ClaimPMS4Win
 
                     if (this.PlexOnlineUsername != jo["username"].ToString())
                     {
+                        this.addLog("Confirm continue as different user");
                         DialogResult dialogResult = MessageBox.Show("The entered credentials are different from what PMS used to be claimed as. Do you want to continue?", "Please confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (dialogResult == DialogResult.No)
                         {
@@ -82,6 +83,7 @@ namespace ClaimPMS4Win
                     }
                     authToken = jo["authToken"].ToString();
                     PlexOnlineMail = jo["email"].ToString();
+                    PlexOnlineUsername = jo["username"].ToString();
                     this.addLog("Logged in okay");
                     return true;
                 default:
