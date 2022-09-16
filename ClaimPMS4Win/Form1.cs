@@ -139,17 +139,26 @@ namespace ClaimPMS4Win
 
         private Task<bool> updateRegistry()
         {
-            // We now need to update the registry
-            RegistryKey pmsKeys = Registry.CurrentUser.OpenSubKey(@"Software\Plex, Inc.\Plex Media Server", true);
-            if (pmsKeys != null)
+            try
             {
-                pmsKeys.SetValue("PlexOnlineHome", 1, RegistryValueKind.DWord);
-                pmsKeys.SetValue("PlexOnlineMail", this.PlexOnlineMail, RegistryValueKind.String);
-                pmsKeys.SetValue("PlexOnlineToken", this.exchangeToken, RegistryValueKind.String);
-                pmsKeys.SetValue("PlexOnlineUsername", this.PlexOnlineUsername, RegistryValueKind.String);
-                pmsKeys.Close();
-                return Task.FromResult(true);
-            } else { return Task.FromResult(false); }
+                // We now need to update the registry
+                RegistryKey pmsKeys = Registry.CurrentUser.OpenSubKey(@"Software\Plex, Inc.\Plex Media Server", true);
+                if (pmsKeys != null)
+                {
+                    pmsKeys.SetValue("PlexOnlineHome", 1, RegistryValueKind.DWord);
+                    pmsKeys.SetValue("PlexOnlineMail", this.PlexOnlineMail, RegistryValueKind.String);
+                    pmsKeys.SetValue("PlexOnlineToken", this.exchangeToken, RegistryValueKind.String);
+                    pmsKeys.SetValue("PlexOnlineUsername", this.PlexOnlineUsername, RegistryValueKind.String);
+                    pmsKeys.Close();
+                    return Task.FromResult(true);
+                }
+                else { return Task.FromResult(false); }
+            }
+            catch (Exception ex) {
+                this.addLog("We had an exception writing to the registry as:");
+                this.addLog(ex.ToString());
+                return Task.FromResult(false);
+            }
         }
 
         private Task<bool> restartPMS()
@@ -282,6 +291,7 @@ namespace ClaimPMS4Win
                 {
                     this.btnClaim.Text = "Re-claim";
                     this.addLog("PMS detected as been claimed");
+                    this.addLog("PMS owner detected as: " + this.PlexOnlineUsername);
                 } else
                 {
                     this.addLog("PMS detected as not claimed");
